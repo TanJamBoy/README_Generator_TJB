@@ -12,8 +12,11 @@ const questions = [
     "What is the description of your project?",
     "What are the installation requirements of your project?",
     "How should people use your project?",
-    "Who are the collaborators on this project?",
+    "What are the contribution guidelines?",
     "How should people test your project?",
+    "What license are you using?",
+    "What is your GitHub username?",
+    "What is your email address?",
 
 ];
 
@@ -51,6 +54,22 @@ function promptUser(){
                 message: questions[5],
                 type: "input"
             },
+            {
+                name: "license",
+                message: questions[6],
+                type: "list",
+                choices: ["MIT", "IBM", "Mozilla"]
+            },
+            {
+                name: "gitHub",
+                message: questions[7],
+                type: "input"
+            },
+            {
+                name: "email",
+                message: questions[8],
+                type: "input"
+            },
         ])
         .then(e => {
             let readmeContent = Markdown(e);
@@ -63,7 +82,6 @@ function promptUser(){
 
 // function to write README file
 function wrtieToFile(fileName, data) {
-    data = JSON.stringify(data);
     writeFileAsync(fileName, data);
 };
 
