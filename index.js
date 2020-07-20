@@ -73,7 +73,7 @@ function promptUser(){
         ])
         .then(e => {
             let readmeContent = Markdown(e);
-            wrtieToFile("README_TEST.md", readmeContent);
+            wrtieToFile("README_SAMPLE.md", readmeContent);
         })
         .catch(err => {
             if(err){console.log(err)};
